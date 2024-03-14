@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultato Linguaggio di Programmazione</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #risultato {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="risultato"></div>
+
+    <script>
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var linguaggioIndex = parseInt(urlParams.get('linguaggio'));
+
+        var messaggio;
+
+        switch (linguaggioIndex) {
+            case 0:
+                messaggio = "Sei Java! Hai una predilezione per la robustezza e le prestazioni ottimali.";
+            break;
+            case 1:
+                messaggio = "Sei C! Ti piace avere il controllo totale sull'hardware e risolvere problemi di basso livello.";
+            break;
+            case 2:
+                messaggio = "Sei HTML! Ami creare design e layout per le pagine web.";
+            break;
+            case 3:
+                messaggio = "Sei Python! Trovi la tua passione nell'analizzare e manipolare dati con facilità.";
+            break;
+        }
+
+        document.getElementById("risultato").innerText = messaggio;
+    </script>
+</body>
+</html>
